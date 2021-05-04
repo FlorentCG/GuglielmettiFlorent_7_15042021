@@ -1,0 +1,36 @@
+img{
+    width: 8rem;
+    height: 5rem;
+    margin-right: 15px;
+}
+
+@media (max-width: 710px){
+    .navbar{
+        width: 105%;
+        text-align: center;
+    }
+}
+@media (max-width : 769px){
+    img{
+        display : none ; 
+    }
+}
+li{
+    position: relative;
+    margin:0px 20px;
+}
+
+li::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 90%;
+    height: 3px;
+    background: #fff;
+    transform: scale(0);
+    transition: transform 0.2s ease-in-out;
+}
+
+li:hover::after{
+    transform: scale(1);
+}

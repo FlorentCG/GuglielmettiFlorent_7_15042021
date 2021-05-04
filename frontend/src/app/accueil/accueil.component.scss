@@ -1,0 +1,69 @@
+section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+h2{
+    font-family: 'Indie Flower', cursive;
+}
+img{
+    padding:2rem 0rem;
+}
+.baniere{
+    position: relative;
+    border-radius: 5px;
+    box-shadow: 0px 4px 4px #1c1a19;
+}
+.baniere_description{
+    position: absolute;
+    bottom : 0 ; 
+    color:#fff;
+    background-color: rgba(24,24,24,0.8);
+    border-radius: 0px 0px 5px 5px;
+    
+}
+.name{
+    animation: text 4s ease-in-out;
+    font-size: 50px;
+    font-weight: bold;
+
+}
+@keyframes text {
+    0%{
+        color: rgb(206, 70, 70);
+        transform: scale3d(0.4,0.9,1.6);  
+        opacity: 0;
+    }
+    25%{
+        color: rgb(214, 114, 20);
+        opacity: 0.3;
+    }
+    40%{ 
+        color: rgb(112, 88, 177);
+        opacity: 0.4;
+    }
+    50%{
+        color: rgb(19, 201, 74);
+        opacity: 0.5;
+    }
+    70%{
+        color: rgb(173, 27, 179);
+        opacity: 0.7;
+    }
+    100%{
+        color:rgb(14, 66, 14);
+        transform: scale3d(1,1,1);
+        opacity: 1;
+    }
+}
+@media(max-width: 430px){
+    section{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0px 25px;
+    }
+}
+
+
