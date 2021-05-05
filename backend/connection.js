@@ -2,7 +2,7 @@ const Sequelize= require ('sequelize');
 require('dotenv').config()
 
 //Connection Base de donnée //
-const sequelize = new Sequelize('groupomania', 'root', '', {
+const sequelize = new Sequelize('database_development', 'root', '', {
     host: 'localhost',
     dialect: 'mysql',
     logging: false

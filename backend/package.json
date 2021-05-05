@@ -1,7 +1,7 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "description": "Réseaux Social interne/Grouponania",
+  "description": "",
   "main": "server.js",
   "repository": {
     "type": "git",
