@@ -1,21 +1,26 @@
-const jwt = require("jsonwebtoken"); //Importation de jsnwebtoken pour le système de token //
-require('dotenv').config();
+// Imports
+const jwt = require('jsonwebtoken');
 
+// Exportation de la fonction d'authentification
 module.exports = (req, res, next) => {
-  try {
-    let token = req.headers.authorization.split(" ")[1]; //Récupération du token provenant de la requête //
-    let decodedToken = jwt.verify(token, `${process.env.DB_TOKEN}`); //Fonction pour décoder le token //
-    let userId = decodedToken.userId; //récupération du user ID //
-    if (userId == null) { //Si le décodage est mauvais alors --> // req.body.userId && req.body.userId !== userId //
-      throw "Invalid user ID";
-    } else {
-      req.userId= userId;
-      next();
-      userId = null;
+    // Récupération du token dans les paramètres
+    const authHeader = req.headers.authorization;
+
+    // Si l'utilisateur possède une autorisation,
+    // on déclare le token et on le vérifie, s'il n'y a pas
+    // d'erreur, on le next, sinon on renvoie un statut 403
+    if (authHeader) {
+        const token = authHeader.split(' ')[1];
+
+        jwt.verify(token, 'DEVELOPMENT_TOKEN_SECRET', (err, user) => {
+            if (err) {
+                return res.status(403);
+            }
+            next();
+        });
     }
-  } catch {
-    res.status(401).json({
-      error: Error.message= 'Requête invalide, erreur Token !'
-    });
-  }
+    // Sinon, on renvoie le statut 401 Unauthorized
+    else {
+        res.status(401).json({error:"accès non authorisé"});
+    }
 };
