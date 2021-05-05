@@ -29,8 +29,8 @@ export class SignupComponent implements OnInit {
       this.Userservice.postUser(this.user).subscribe(response =>{
         if(response.userId != null){
           Swal.fire({
-            title:'Whaouuu !',
-            text:'Création de compte OK !',
+            title:'',
+            text:'Création de compte OK',
             icon:'success',
             timer: 2000
           }) 
@@ -40,7 +40,7 @@ export class SignupComponent implements OnInit {
         }
         else{
           Swal.fire({
-            title:'Ouppss...',
+            title:'',
             text:'Problème identification',
             icon:'error',
             timer: 3000
@@ -49,7 +49,7 @@ export class SignupComponent implements OnInit {
         }
       },error =>{
         Swal.fire({
-          title:'Ouppss...',
+          title:'',
           text:'Email déjà existant ou mot de passe incorrect',
           icon:'error',
           timer: 3000
@@ -58,8 +58,8 @@ export class SignupComponent implements OnInit {
     }
     else{
       Swal.fire({
-        title:'Ouppss...',
-        text:'Paramètres incorrect',
+        title:'',
+        text:'Paramètres incorrects',
         icon:'error',
         timer: 3000
       })

@@ -31,8 +31,8 @@ export class SigninComponent implements OnInit {
         if(response.userId != null){
             this.userservice.saveUser(response);
             Swal.fire({
-              title:'Youpiiii !',
-              text:'Authentification réussi',
+              title:'',
+              text:'Authentification réussie',
               icon:'success',
               timer: 2000
             })
@@ -43,14 +43,14 @@ export class SigninComponent implements OnInit {
         }
         else{
           Swal.fire({
-            title:'Oopss..',
+            title:'',
             text:'Error identification !',
             icon:'error'
           })
         }
       },error =>{
         Swal.fire({
-          title:'Oopss..',
+          title:'',
           text:'Adresse mail ou mot de passe incorrect',
           icon:'error'
         })
@@ -58,7 +58,7 @@ export class SigninComponent implements OnInit {
     }
     else{
       Swal.fire({
-        title:'Oopss..',
+        title:'',
         text:'Paramètre invalide !',
         icon:'error'
       })
